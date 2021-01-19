@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.ulessondemo.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_lessonsFragment"
+            app:destination="@id/lessonsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_watchLessonFragment"
+            app:destination="@id/watchLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonsFragment"
+        android:name="com.example.ulessondemo.ui.chapter.LessonsFragment"
+        android:label="lessons_fragment"
+        tools:layout="@layout/lessons_fragment">
+        <argument
+            android:name="subjectWithChapters"
+            app:argType="com.example.ulessondemo.model.SubjectWithChapters" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_watchLessonFragment"
+            app:destination="@id/watchLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchLessonFragment"
+        android:name="com.example.ulessondemo.ui.watchlesson.WatchLessonFragment"
+        android:label="watch_lesson_fragment"
+        tools:layout="@layout/watch_lesson_fragment">
+        <argument
+            android:name="lesson"
+            app:argType="com.example.ulessondemo.model.LessonWithSubjectAndChapter" />
+    </fragment>
+</navigation>

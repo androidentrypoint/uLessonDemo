@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">uLessonDemo</string>
+    <string name="subject_icon">Subject icon</string>
+    <string name="recently_watched_topics">Recently watched topics</string>
+    <string name="view_all">View all</string>
+    <string name="hello_name">Hello Simbi</string>
+    <string name="play_icon">Play Icon</string>
+    <string name="back">Back</string>
+</resources>
