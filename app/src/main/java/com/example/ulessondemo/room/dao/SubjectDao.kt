@@ -11,20 +11,20 @@ abstract class SubjectDao(private val db: UDatabase) {
 
     @Transaction
     @Query("SELECT * FROM SubjectEntity")
-    abstract fun getAllSubjects(): List<SubjectWithChapterEntity>
+    abstract suspend fun getAllSubjects(): List<SubjectWithChapterEntity>
 
     @Transaction
     @Query("SELECT * FROM SubjectEntity")
     abstract fun getAllSubjectsAsFlow(): Flow<List<SubjectWithChapterEntity>>
 
     @Query("DELETE FROM SubjectEntity")
-    abstract fun deleteAll()
+    abstract suspend fun deleteAll()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract fun insertSubject(subjectEntity: SubjectEntity)
+    abstract suspend fun insertSubject(subjectEntity: SubjectEntity)
 
     @Transaction
-    open fun insertSubjects(subjectWithChapterEntities: List<SubjectWithChapterEntity>) {
+    open suspend fun insertSubjects(subjectWithChapterEntities: List<SubjectWithChapterEntity>) {
         val lessons = db.lessonDao().getAllLessons()
         deleteAll()
         subjectWithChapterEntities.forEach { subject ->

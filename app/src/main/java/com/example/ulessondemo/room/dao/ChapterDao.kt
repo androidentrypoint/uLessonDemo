@@ -10,5 +10,5 @@ import org.akefestival.core.room.UDatabase
 abstract class ChapterDao(private val db: UDatabase) {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract fun insertChapter(chapterEntity: ChapterEntity)
+    abstract suspend fun insertChapter(chapterEntity: ChapterEntity)
 }

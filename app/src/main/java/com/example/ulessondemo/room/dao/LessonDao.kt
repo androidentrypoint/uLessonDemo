@@ -10,16 +10,16 @@ abstract class LessonDao {
 
     @Transaction
     @Query("SELECT * FROM LessonEntity WHERE lastWatched IS NOT NULL ORDER BY lastWatched DESC")
-    abstract fun getRecentlyWatchedLessons(): List<LessonAndChapterEntity>
+    abstract suspend fun getRecentlyWatchedLessons(): List<LessonAndChapterEntity>
 
     @Transaction
     @Query("SELECT * FROM LessonEntity WHERE lastWatched IS NOT NULL ORDER BY lastWatched DESC")
     abstract fun getRecentlyWatchedLessonsAsFlow(): Flow<List<LessonAndChapterEntity>>
 
     @Query("SELECT * FROM LessonEntity")
-    abstract fun getAllLessons(): List<LessonEntity>
+    abstract suspend fun getAllLessons(): List<LessonEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract fun insertLesson(lessonEntity: LessonEntity)
+    abstract suspend fun insertLesson(lessonEntity: LessonEntity)
 
 }
