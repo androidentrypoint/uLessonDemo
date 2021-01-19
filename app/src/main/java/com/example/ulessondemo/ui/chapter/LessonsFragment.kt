@@ -27,7 +27,6 @@ class LessonsFragment : Fragment(R.layout.lessons_fragment) {
             findNavController().navigateUp()
         }
         binding.chaptersRv.adapter = ChapterAdapter(args.subjectWithChapters.subject) {
-            viewModel.updateLastWatched(it.lesson)
             findNavController().navigate(
                 LessonsFragmentDirections.actionLessonsFragmentToWatchLessonFragment(it)
             )

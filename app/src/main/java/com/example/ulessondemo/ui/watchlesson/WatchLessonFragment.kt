@@ -54,6 +54,7 @@ class WatchLessonFragment : Fragment(R.layout.watch_lesson_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.updateLastWatched(args.lesson.lesson)
         binding.chapterName.text = args.lesson.chapter.name
         binding.lessonName.text = args.lesson.lesson.name
         binding.back.setOnClickListener {

@@ -29,7 +29,6 @@ class MainFragment : Fragment(R.layout.main_fragment) {
 
     private val recentTopicHeaderAdapter = HeaderAdapter()
     private val recentTopicAdapter = RecentTopicAdapter {
-        viewModel.updateLastWatched(it.lesson)
         findNavController().navigate(
             MainFragmentDirections.actionMainFragmentToWatchLessonFragment(it)
         )
