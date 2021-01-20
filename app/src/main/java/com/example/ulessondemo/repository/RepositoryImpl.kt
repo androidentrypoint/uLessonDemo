@@ -6,8 +6,8 @@ import com.example.ulessondemo.model.SubjectWithChapters
 import com.example.ulessondemo.network.NetworkProcessor
 import com.example.ulessondemo.network.UService
 import com.example.ulessondemo.network.model.SubjectDTO
-import com.example.ulessondemo.room.dao.LessonDao
-import com.example.ulessondemo.room.dao.SubjectDao
+import com.example.ulessondemo.room.dao.ILessonDao
+import com.example.ulessondemo.room.dao.ISubjectDao
 import com.example.ulessondemo.room.entity.LessonEntity
 import com.example.ulessondemo.room.relation.LessonAndChapterEntity
 import com.example.ulessondemo.room.relation.SubjectWithChapterEntity
@@ -21,8 +21,8 @@ import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(
     private val service: UService,
-    private val subjectDao: SubjectDao,
-    private val lessonDao: LessonDao,
+    private val subjectDao: ISubjectDao,
+    private val lessonDao: ILessonDao,
     private val dispatcherProvider: DispatcherProvider,
     private val networkProcessor: NetworkProcessor,
     private val subjectMapper: Mapper<SubjectWithChapterEntity, SubjectWithChapters>,

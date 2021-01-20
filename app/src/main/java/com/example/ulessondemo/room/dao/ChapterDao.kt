@@ -6,9 +6,10 @@ import androidx.room.OnConflictStrategy
 import com.example.ulessondemo.room.entity.ChapterEntity
 import org.akefestival.core.room.UDatabase
 
-@Dao
-abstract class ChapterDao(private val db: UDatabase) {
-
+interface IChapterDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insertChapter(chapterEntity: ChapterEntity)
+    suspend fun insertChapter(chapterEntity: ChapterEntity)
 }
+
+@Dao
+abstract class ChapterDao(private val db: UDatabase) : IChapterDao

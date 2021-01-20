@@ -6,25 +6,30 @@ import com.example.ulessondemo.room.relation.SubjectWithChapterEntity
 import kotlinx.coroutines.flow.Flow
 import org.akefestival.core.room.UDatabase
 
-@Dao
-abstract class SubjectDao(private val db: UDatabase) {
+interface ISubjectDao {
+    @Transaction
+    @Query("SELECT * FROM SubjectEntity")
+    suspend fun getAllSubjects(): List<SubjectWithChapterEntity>
 
     @Transaction
     @Query("SELECT * FROM SubjectEntity")
-    abstract suspend fun getAllSubjects(): List<SubjectWithChapterEntity>
-
-    @Transaction
-    @Query("SELECT * FROM SubjectEntity")
-    abstract fun getAllSubjectsAsFlow(): Flow<List<SubjectWithChapterEntity>>
+    fun getAllSubjectsAsFlow(): Flow<List<SubjectWithChapterEntity>>
 
     @Query("DELETE FROM SubjectEntity")
-    abstract suspend fun deleteAll()
+    suspend fun deleteAll()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insertSubject(subjectEntity: SubjectEntity)
+    suspend fun insertSubject(subjectEntity: SubjectEntity)
 
     @Transaction
-    open suspend fun insertSubjects(subjectWithChapterEntities: List<SubjectWithChapterEntity>) {
+    suspend fun insertSubjects(subjectWithChapterEntities: List<SubjectWithChapterEntity>)
+}
+
+@Dao
+abstract class SubjectDao(private val db: UDatabase) : ISubjectDao {
+
+    @Transaction
+    override suspend fun insertSubjects(subjectWithChapterEntities: List<SubjectWithChapterEntity>) {
         val lessons = db.lessonDao().getAllLessons()
         deleteAll()
         subjectWithChapterEntities.forEach { subject ->

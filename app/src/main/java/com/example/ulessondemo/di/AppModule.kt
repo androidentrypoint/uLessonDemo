@@ -8,6 +8,7 @@ import com.example.ulessondemo.network.UService
 import com.example.ulessondemo.network.model.SubjectDTO
 import com.example.ulessondemo.repository.Repository
 import com.example.ulessondemo.repository.RepositoryImpl
+import com.example.ulessondemo.room.dao.*
 import com.example.ulessondemo.room.entity.ChapterEntity
 import com.example.ulessondemo.room.entity.LessonEntity
 import com.example.ulessondemo.room.entity.SubjectEntity
@@ -68,6 +69,19 @@ object AppModule {
 @Module
 @InstallIn(ApplicationComponent::class)
 abstract class BindingModule {
+
+    @Singleton
+    @Binds
+    abstract fun bindSubjectDao(subjectDao: SubjectDao): ISubjectDao
+
+    @Singleton
+    @Binds
+    abstract fun bindChapterDao(chapterDao: ChapterDao): IChapterDao
+
+    @Singleton
+    @Binds
+    abstract fun bindLessonDao(lessonDao: LessonDao): ILessonDao
+
     @Singleton
     @Binds
     abstract fun bindRepository(
