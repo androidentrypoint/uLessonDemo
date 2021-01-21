@@ -1,4 +1,4 @@
-package org.akefestival.core.util
+package com.example.ulessondemo.util
 
 sealed class NetworkStatus<T> {
     data class Success<T>(val data: T) : NetworkStatus<T>()

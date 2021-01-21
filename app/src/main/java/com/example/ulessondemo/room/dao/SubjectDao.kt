@@ -1,10 +1,10 @@
 package com.example.ulessondemo.room.dao
 
 import androidx.room.*
+import com.example.ulessondemo.room.UDatabase
 import com.example.ulessondemo.room.entity.SubjectEntity
 import com.example.ulessondemo.room.relation.SubjectWithChapterEntity
 import kotlinx.coroutines.flow.Flow
-import org.akefestival.core.room.UDatabase
 
 interface ISubjectDao {
     @Transaction

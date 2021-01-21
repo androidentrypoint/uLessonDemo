@@ -13,9 +13,9 @@ import com.example.ulessondemo.ui.main.adapters.ButtonAdapter
 import com.example.ulessondemo.ui.main.adapters.HeaderAdapter
 import com.example.ulessondemo.ui.main.adapters.RecentTopicAdapter
 import com.example.ulessondemo.ui.main.adapters.SubjectGridAdapter
+import com.example.ulessondemo.util.NetworkStatus
 import com.example.ulessondemo.util.viewbinding.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import org.akefestival.core.util.NetworkStatus
 
 @AndroidEntryPoint
 class MainFragment : Fragment(R.layout.main_fragment) {

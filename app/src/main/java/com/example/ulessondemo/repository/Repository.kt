@@ -2,8 +2,8 @@ package com.example.ulessondemo.repository
 
 import com.example.ulessondemo.model.Lesson
 import com.example.ulessondemo.state.HomeState
+import com.example.ulessondemo.util.NetworkStatus
 import kotlinx.coroutines.flow.Flow
-import org.akefestival.core.util.NetworkStatus
 
 interface Repository {
 

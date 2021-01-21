@@ -1,4 +1,4 @@
-package org.akefestival.core.util
+package com.example.ulessondemo.util
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

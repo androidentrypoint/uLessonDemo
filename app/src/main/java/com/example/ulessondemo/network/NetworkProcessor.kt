@@ -1,6 +1,6 @@
 package com.example.ulessondemo.network
 
-import org.akefestival.core.util.NetworkStatus
+import com.example.ulessondemo.util.NetworkStatus
 import retrofit2.Response
 
 interface NetworkProcessor {

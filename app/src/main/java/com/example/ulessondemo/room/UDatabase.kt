@@ -1,4 +1,4 @@
-package org.akefestival.core.room
+package com.example.ulessondemo.room
 
 import android.content.Context
 import androidx.room.Database

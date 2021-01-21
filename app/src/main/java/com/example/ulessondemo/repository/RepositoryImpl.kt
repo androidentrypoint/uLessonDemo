@@ -12,11 +12,11 @@ import com.example.ulessondemo.room.entity.LessonEntity
 import com.example.ulessondemo.room.relation.LessonAndChapterEntity
 import com.example.ulessondemo.room.relation.SubjectWithChapterEntity
 import com.example.ulessondemo.state.HomeState
+import com.example.ulessondemo.util.DispatcherProvider
+import com.example.ulessondemo.util.NetworkStatus
 import com.example.ulessondemo.util.mapper.Mapper
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.withContext
-import org.akefestival.core.util.DispatcherProvider
-import org.akefestival.core.util.NetworkStatus
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(

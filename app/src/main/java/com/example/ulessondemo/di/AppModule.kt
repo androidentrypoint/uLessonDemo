@@ -8,6 +8,7 @@ import com.example.ulessondemo.network.UService
 import com.example.ulessondemo.network.model.SubjectDTO
 import com.example.ulessondemo.repository.Repository
 import com.example.ulessondemo.repository.RepositoryImpl
+import com.example.ulessondemo.room.UDatabase
 import com.example.ulessondemo.room.dao.*
 import com.example.ulessondemo.room.entity.ChapterEntity
 import com.example.ulessondemo.room.entity.LessonEntity
@@ -15,6 +16,8 @@ import com.example.ulessondemo.room.entity.SubjectEntity
 import com.example.ulessondemo.room.relation.ChapterWithLessonsEntity
 import com.example.ulessondemo.room.relation.LessonAndChapterEntity
 import com.example.ulessondemo.room.relation.SubjectWithChapterEntity
+import com.example.ulessondemo.util.DefaultDispatcherProvider
+import com.example.ulessondemo.util.DispatcherProvider
 import com.example.ulessondemo.util.mapper.*
 import dagger.Binds
 import dagger.Module
@@ -22,9 +25,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
-import org.akefestival.core.room.UDatabase
-import org.akefestival.core.util.DefaultDispatcherProvider
-import org.akefestival.core.util.DispatcherProvider
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton

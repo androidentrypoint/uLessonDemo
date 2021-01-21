@@ -1,9 +1,9 @@
 package com.example.ulessondemo.network
 
+import com.example.ulessondemo.util.DispatcherProvider
+import com.example.ulessondemo.util.NetworkConstants
+import com.example.ulessondemo.util.NetworkStatus
 import kotlinx.coroutines.withContext
-import org.akefestival.core.util.DispatcherProvider
-import org.akefestival.core.util.NetworkConstants
-import org.akefestival.core.util.NetworkStatus
 import retrofit2.Response
 import javax.inject.Inject
 
